@@ -1,0 +1,1 @@
+puts "Hello Abstract Factory pattern."
