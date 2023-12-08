@@ -22,7 +22,7 @@ cul_time do
   res = CountSort.classic(input_arr)
 end
 print "Result:\n" + res.join(", ") + "\n\n"
-# Сортування підрахунком без комулятивних сум
+# Сортування підрахунком без кумулятивних сум
 cul_time do
   res = CountSort.advanced(input_arr)
 end
