@@ -23,6 +23,7 @@ module CountSort
     count = Array.new(max + 1, 0)
     arr.each { |num| count[num] += 1 }
     # в даній реалізації пропускаємо підрахунок комулятивних сум
+    # через це, дана реалізація не стабільна (може змінитись порядок однакових елементів)
     sorted_arr = []
     count.each_with_index { |value, num| value.times { sorted_arr << num } }
     sorted_arr
