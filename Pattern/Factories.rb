@@ -1,3 +1,6 @@
+# Абстрактний клас фабрики.
+# Можна обійтись і без нього, головне щоб конкретні фабрики могли "створювати" всю "серію" (автомобіль, літак, корабель) транспорту.
+# Наступний клас наведено для наглядності
 class VehicleFactory
   def produce_car
     raise('not implemented method')
@@ -12,7 +15,8 @@ class VehicleFactory
   end
 end
 
-class CivilianFactory < VehicleFactory
+# Конкретні фабрики
+class CivilianFactory < VehicleFactory # Дана фабрика виробляє лише серію трансопрту цивільного "типу"
   def produce_car
     CivilCar.new
   end
@@ -26,7 +30,7 @@ class CivilianFactory < VehicleFactory
   end
 end
 
-class MilitaryFactory < VehicleFactory
+class MilitaryFactory < VehicleFactory # Дана фабрика виробляє лише серію трансопрту військового "типу"
   def produce_car
     MilitaryCar.new
   end
@@ -39,3 +43,5 @@ class MilitaryFactory < VehicleFactory
     MilitaryShip.new
   end
 end
+
+# Можна створити інші фабрики, які, наприклад, будуть виготовляти серію трансопрту різного "типу" (щось цивільного, а щось військового)
